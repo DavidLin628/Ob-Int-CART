@@ -1,3 +1,4 @@
+'''
 Oblique Interval CART
 A CART-inspired decision tree that learns oblique splits via linear combinations of features and interval-based partitioning.
 
@@ -24,3 +25,4 @@ Contact & Contributions
 Created by Guangyao Lin.
 For bugs, feature requests, or improvements, please open an issue on GitHub.
 This implementation is open-source and free to use under MIT license.
+'''
