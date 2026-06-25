@@ -1,4 +1,3 @@
-'''
 Oblique Interval CART
 A CART-inspired decision tree that learns oblique splits via linear combinations of features and interval-based partitioning.
 
@@ -12,7 +11,7 @@ Ridge Regularization: Uses ridge regression (alpha = lambda_) to stabilize linea
 Customizable: Supports both classification and regression tasks.
 Visualization: Generates PDF/SVG graphs of the learned tree with interpretable labels.
 Depth Analysis: Evaluates model performance per leaf depth or max depth.
-
+```
 File Structure (Suggested)
 your-project/
 ├── Ob-Int CART.ipynb           # This file
@@ -20,9 +19,8 @@ your-project/
 ├── data/                       # Input data directory
 │   └── train.csv               # Input data file
 └── figures/                    # Output tree graphs
-
+```
 Contact & Contributions
 Created by Guangyao Lin.
 For bugs, feature requests, or improvements, please open an issue on GitHub.
 This implementation is open-source and free to use under MIT license.
-'''
