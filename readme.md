@@ -16,7 +16,8 @@ File Structure (Suggested)
 your-project/
 ├── Ob-Int CART.ipynb           # This file
 ├── README.md                   # This document
-└── data/train.csv              # Intput data file
+├── data/                       # Input data directory
+│   └── train.csv               # Input data file
 └── figures/                    # Output tree graphs
 
 Contact & Contributions
