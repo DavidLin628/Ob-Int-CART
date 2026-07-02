@@ -1,0 +1,29 @@
+// Oblique Interval Tree
+digraph {
+	dpi=300 rankdir=TB
+	node_0 [label="P in [0.1025, 0.1516]" fillcolor="#e6f3ff" shape=box style=filled]
+	node_0 -> node_1 [label="in interval"]
+	node_1 [label="1.6381*f4+2.2981*E
+in [0.7189, 1.3236]" fillcolor="#e6f3ff" shape=box style=filled]
+	node_1 -> node_2 [label="in interval"]
+	node_2 [label="1.0532*f5+0.1497*D
+in [1.4231, 1.4662]" fillcolor="#e6f3ff" shape=box style=filled]
+	node_2 -> node_3 [label="in interval"]
+	node_3 [label="prediction:1.5404" fillcolor="#e6f7e6" shape=ellipse style=filled]
+	node_2 -> node_4 [label="out of interval"]
+	node_4 [label="prediction:1.3952" fillcolor="#e6f7e6" shape=ellipse style=filled]
+	node_1 -> node_5 [label="out of interval"]
+	node_5 [label="0.7623*f5+0.4206*T
+in [0.7343, 1.2654]" fillcolor="#e6f3ff" shape=box style=filled]
+	node_5 -> node_6 [label="in interval"]
+	node_6 [label="prediction:1.4024" fillcolor="#e6f7e6" shape=ellipse style=filled]
+	node_5 -> node_7 [label="out of interval"]
+	node_7 [label="prediction:1.1605" fillcolor="#e6f7e6" shape=ellipse style=filled]
+	node_0 -> node_8 [label="out of interval"]
+	node_8 [label="0.9387*f4+1.0064*D
+in [0.9592, 1.0053]" fillcolor="#e6f3ff" shape=box style=filled]
+	node_8 -> node_9 [label="in interval"]
+	node_9 [label="prediction:1.3881" fillcolor="#e6f7e6" shape=ellipse style=filled]
+	node_8 -> node_10 [label="out of interval"]
+	node_10 [label="prediction:1.0785" fillcolor="#e6f7e6" shape=ellipse style=filled]
+}
