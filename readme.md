@@ -107,16 +107,17 @@ Ob-Int CART.ipynb
 
 Then run the cells sequentially. The notebook performs the following operations:
 
-1. Load `data/train.csv`.
+1. Load data/train.csv.
 2. Define the input features and target label.
 3. Visualize the sample-set distribution.
 4. Define the Ob-Int CART model.
-5. Perform LOOCV-based hyperparameter selection for Ob-Int CART.
+5. Perform nested CV for Ob-Int CART.
 6. Define the base CART model.
-7. Perform LOOCV-based hyperparameter selection for base CART.
-8. Train and export the base CART tree.
-9. Report training-set RMSE and LOOCV RMSE for model comparison.
-10. Analyze RMSE variation with tree depth.
+7. Perform the same nested CV procedure for the base CART model.
+8. Train the final models using the selected hyperparameters.
+9. Export and visualize the resulting decision trees.
+10. Report nested-CV RMSE and fold-wise RMSE statistics for model comparison.
+11. Analyze RMSE variation with tree depth and model configuration.
 
 The notebook metadata may retain a local kernel name from the development computer. If the kernel is not found, select `Python (Ob-Int CART)` manually in JupyterLab, or use the command-line runner with `KERNEL_NAME=ob-int-cart`.
 
