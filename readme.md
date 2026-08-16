@@ -146,6 +146,11 @@ Outer leave 2 out Cross-Validation
 
 Leave 2 out cross-validation (L2OCV) is used in the outer loop. For a dataset containing (n) samples, all possible pairs of samples are successively held out as independent test sets.
 
+```text
+other samples -> model development / hyperparameter selection
+ 2 samples -> independent outer test set
+```
+
 Inner Leave-One-Out Cross-Validation
 
 For each outer fold, hyperparameter optimization is performed exclusively on the samples in the outer training set.
