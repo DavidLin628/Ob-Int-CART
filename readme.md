@@ -121,6 +121,46 @@ Then run the cells sequentially. The notebook performs the following operations:
 
 The notebook metadata may retain a local kernel name from the development computer. If the kernel is not found, select `Python (Ob-Int CART)` manually in JupyterLab, or use the command-line runner with `KERNEL_NAME=ob-int-cart`.
 
+##Nested Cross-Validation
+
+To obtain an unbiased estimate of model generalization performance while optimizing the model hyperparameters, the notebook employs a nested cross-validation (nested CV) framework.
+
+The nested CV consists of:
+
+Complete dataset 
+        |
+        |-- Outer leave 2 out CV
+        |     |
+        |     |-- outer training set
+        |     |
+        |     `-- outer test set
+        |
+        `-- Inner LOOCV 
+              |
+              |-- inner training set
+              |
+              `-- inner validation set
+
+Outer leave 2 out Cross-Validation
+
+Leave 2 out cross-validation (L2OCV) is used in the outer loop. For a dataset containing (n) samples, all possible pairs of samples are successively held out as independent test sets.
+
+Inner Leave-One-Out Cross-Validation
+
+For each outer fold, hyperparameter optimization is performed exclusively on the samples in the outer training set.
+
+An inner LOOCV procedure is applied:
+
+LOOCV outer-training samples
+        |
+        |-- inner model training
+        |
+        `-- 1 sample  -> inner validation
+
+The hyperparameter configuration yielding the minimum inner RMSE is selected for that outer fold.
+
+The selected hyperparameters are then used to retrain the model using all outer-training samples. The resulting model is evaluated on the two previously unseen outer test samples.
+
 ## Normalization and Data Leakage Control
 
 For LOOCV, Min-Max normalization is performed **inside each fold**. In each fold, the scaler is fitted only on the training subset and then applied to the held-out validation sample:
