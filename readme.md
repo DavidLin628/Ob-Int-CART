@@ -127,6 +127,7 @@ To obtain an unbiased estimate of model generalization performance while optimiz
 
 The nested CV consists of:
 
+```text
 Complete dataset 
         |
         |-- Outer leave 2 out CV
@@ -140,7 +141,7 @@ Complete dataset
               |-- inner training set
               |
               `-- inner validation set
-
+``` 
 Outer leave 2 out Cross-Validation
 
 Leave 2 out cross-validation (L2OCV) is used in the outer loop. For a dataset containing (n) samples, all possible pairs of samples are successively held out as independent test sets.
@@ -151,11 +152,13 @@ For each outer fold, hyperparameter optimization is performed exclusively on the
 
 An inner LOOCV procedure is applied:
 
+```text
 LOOCV outer-training samples
         |
         |-- inner model training
         |
         `-- 1 sample  -> inner validation
+```
 
 The hyperparameter configuration yielding the minimum inner RMSE is selected for that outer fold.
 
